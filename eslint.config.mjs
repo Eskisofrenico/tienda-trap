@@ -11,6 +11,16 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    rules: {
+      // Reglas personalizadas para K3K MAFIA
+      "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+      "@typescript-eslint/prefer-const": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-page-custom-font": "off",
+    },
+  },
 ];
 
 export default eslintConfig;
